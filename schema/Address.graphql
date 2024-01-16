@@ -1,0 +1,9 @@
+type Address {
+    id: Int
+    neighborhood: String!
+    street: String!
+    number: Int!
+    city: String!
+    uf: String!
+    clientId: Int!
+}

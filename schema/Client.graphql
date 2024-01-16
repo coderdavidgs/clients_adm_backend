@@ -1,0 +1,9 @@
+type Client {
+    id: Int
+    name: String!
+    lastName: String!
+    email: String!
+    job: String!
+    phoneNumber: String!
+    active: Boolean
+}
