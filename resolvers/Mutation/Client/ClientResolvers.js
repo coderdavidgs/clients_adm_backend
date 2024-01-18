@@ -1,4 +1,4 @@
-import conn from '../../database/config/conn.js';
+import conn from '../../../database/config/conn.js';
 
 const clientResolvers = {
     async registerClient(_, { input }) {

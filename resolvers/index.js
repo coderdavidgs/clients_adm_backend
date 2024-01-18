@@ -1,8 +1,12 @@
-import Client  from "./Client/index.js";
+import Mutation from "./Mutation/index.js";
+import Query from "./Query/index.js";
 
 const resolvers = {
+    Query: {
+        ...Query
+    },
     Mutation: {
-        ...Client,
+        ...Mutation,
     }
 }
 
