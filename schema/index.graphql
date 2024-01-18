@@ -1,2 +1,5 @@
 #import Query from 'Query.graphql';
 #import Client from 'Client.graphql';
+#import Address from 'Address.graphql';
+#import Mutation from 'Mutation.graphql';
+#import Input from './input/ClientInput.graphql';
