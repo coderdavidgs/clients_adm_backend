@@ -1,0 +1,7 @@
+input RegisterClientInput {
+    name: String!
+    lastName: String!
+    email: String!
+    job: String!
+    phoneNumber: String!
+}
