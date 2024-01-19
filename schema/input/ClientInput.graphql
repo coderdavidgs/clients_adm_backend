@@ -5,3 +5,7 @@ input RegisterClientInput {
     job: String!
     phoneNumber: String!
 }
+
+input ClientByIdInput {
+    id: Int!
+}

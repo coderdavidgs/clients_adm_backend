@@ -1,3 +1,4 @@
 type Query{
     clients: [Client!]
+    client(input: ClientByIdInput): Client!
 }
