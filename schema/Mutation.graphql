@@ -1,3 +1,4 @@
 type Mutation {
     registerClient(input: RegisterClientInput): Client!
+    updateClient(input: UpdateClientInput): Client!
 }

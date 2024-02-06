@@ -9,3 +9,9 @@ input RegisterClientInput {
 input ClientByIdInput {
     id: Int!
 }
+
+input UpdateClientInput {
+    id: Int!
+    job: String
+    phoneNumber: String
+}
