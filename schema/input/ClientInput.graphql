@@ -15,3 +15,8 @@ input UpdateClientInput {
     job: String
     phoneNumber: String
 }
+
+input DeleteClientInput {
+    id: Int
+    email: String
+}

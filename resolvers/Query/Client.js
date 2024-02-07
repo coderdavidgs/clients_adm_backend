@@ -1,4 +1,5 @@
 import conn from '../../database/config/conn.js';
+import { VerifyUserExistsById } from '../../services/verifyUserExists.js';
 
 const clientQuery = {
     async clients() {
@@ -15,7 +16,7 @@ const clientQuery = {
 
     async client(_, { input }) {
         const { id } = input;
-        const verifyIdExists = await conn('clients').where({ id }).first();
+        const verifyIdExists = VerifyUserExistsById(id);
 
         if(verifyIdExists) {
             return await conn('clients').select(

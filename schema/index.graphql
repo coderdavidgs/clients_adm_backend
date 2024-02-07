@@ -3,3 +3,4 @@
 #import Address from 'Address.graphql';
 #import Mutation from 'Mutation.graphql';
 #import Input from './input/ClientInput.graphql';
+#import DeleteClientResponse from './others/DeleteClient.graphql';

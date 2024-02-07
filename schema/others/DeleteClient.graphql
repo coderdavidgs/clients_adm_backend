@@ -1,0 +1,6 @@
+type DeleteClientResponse {
+    id: Int!
+    name: String!
+    lastName: String!
+    message: String!
+}
