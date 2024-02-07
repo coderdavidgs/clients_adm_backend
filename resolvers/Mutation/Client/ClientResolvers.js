@@ -1,4 +1,5 @@
 import conn from '../../../database/config/conn.js';
+import { VerifyUserExistsByEmail, VerifyUserExistsById } from '../../../services/verifyUserExists.js';
 
 const clientResolvers = {
     async registerClient(_, { input }) {
@@ -15,7 +16,7 @@ const clientResolvers = {
                 phone_number: input.phoneNumber,
             }
 
-            const [ id, active ] = await conn('clients').insert(data);
+            const [ id ] = await conn('clients').insert(data);
 
             if(id) return {...input, id};
 
@@ -27,7 +28,7 @@ const clientResolvers = {
 
     async updateClient(_, { input }) {
         const { id, job, phoneNumber } = input;
-        const verifyIdExists = await conn('clients').where({ id }).first();
+        const verifyIdExists = VerifyUserExistsById(id);
 
         if(verifyIdExists) {
             const data = {}
@@ -50,6 +51,38 @@ const clientResolvers = {
         }
 
         return undefined;
+    },
+
+    async deleteClient(_, { input }) {
+        const { id, email } = input;
+
+        const verifyIdExists = VerifyUserExistsById(id);
+        if(verifyIdExists){
+            const user = await conn('clients').select(
+                'id',
+                'name',
+                'last_name as lastName',
+            ).where({ id });
+
+            const res = await conn('clients').delete().where({ id });
+            console.log('res', res);
+            console.log('user', user);
+            return res ? { ...user[0], message: 'Success on delete user' } : undefined;
+        }
+/* id 4 para testar a exclusão até o 8 */
+        const verifyEmailExists = VerifyUserExistsByEmail(email);
+        if(verifyEmailExists) {
+            const user = await conn('clients').select(
+                'id',
+                'name',
+                'last_name as lastName',
+            ).where({ email });
+
+            const res = await conn('clients').delete().where({ email });
+            console.log('res', res);
+            console.log('user', user);
+            return res ? { ...user, message: 'Success on delete user' } : undefined;
+        }
     },
 };
 
