@@ -65,8 +65,6 @@ const clientResolvers = {
             ).where({ id });
 
             const res = await conn('clients').delete().where({ id });
-            console.log('res', res);
-            console.log('user', user);
             return res ? { ...user[0], message: 'Success on delete user' } : undefined;
         }
 /* id 4 para testar a exclusão até o 8 */
@@ -79,8 +77,6 @@ const clientResolvers = {
             ).where({ email });
 
             const res = await conn('clients').delete().where({ email });
-            console.log('res', res);
-            console.log('user', user);
             return res ? { ...user, message: 'Success on delete user' } : undefined;
         }
     },
