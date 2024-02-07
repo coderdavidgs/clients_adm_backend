@@ -67,7 +67,7 @@ const clientResolvers = {
             const res = await conn('clients').delete().where({ id });
             return res ? { ...user[0], message: 'Success on delete user' } : undefined;
         }
-/* id 4 para testar a exclusão até o 8 */
+        
         const verifyEmailExists = VerifyUserExistsByEmail(email);
         if(verifyEmailExists) {
             const user = await conn('clients').select(
