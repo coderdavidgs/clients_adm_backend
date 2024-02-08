@@ -6,3 +6,12 @@ input RegisterAddressInput {
     uf: String!
     clientId: Int!
 }
+
+input UpdateAddressInput {
+    id: Int!
+    neighborhood: String!
+    street: String!
+    number: Int!
+    city: String!
+    uf: String!
+}

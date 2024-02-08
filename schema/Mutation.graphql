@@ -3,4 +3,5 @@ type Mutation {
     updateClient(input: UpdateClientInput): Client!
     deleteClient(input: DeleteClientInput): DeleteClientResponse!
     registerAddress(input: RegisterAddressInput): Address!
+    updateAddress(input: UpdateAddressInput): Address!
 }
