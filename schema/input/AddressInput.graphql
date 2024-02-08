@@ -1,0 +1,8 @@
+input RegisterAddressInput {
+    neighborhood: String!
+    street: String!
+    number: Int!
+    city: String!
+    uf: String!
+    clientId: Int!
+}
